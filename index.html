@@ -1,116 +1,544 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Samed Bilgin Portfolio" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet" />
-    <script src="https://kit.fontawesome.com/fa62c117c7.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="styles.css" />
-    <title>Samed Bilgin</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Samed Bilgin - Full Stack Web Developer Portfolio. Passionate about creating innovative web solutions with React, Node.js, and modern technologies.">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <link
+      rel="stylesheet"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?display=swap&family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700"
+    />
+
+    <title>Samed Bilgin - Full Stack Developer Portfolio</title>
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: {
+                50: '#f0f9ff',
+                100: '#e0f2fe',
+                500: '#0ea5e9',
+                600: '#0284c7',
+                700: '#0369a1',
+                900: '#0c4a6e'
+              },
+              accent: {
+                50: '#fef7ff',
+                500: '#a855f7',
+                600: '#9333ea'
+              },
+              dark: {
+                50: '#f8fafc',
+                100: '#f1f5f9',
+                800: '#1e293b',
+                900: '#0f172a'
+              }
+            },
+            animation: {
+              'fade-in': 'fadeIn 0.6s ease-in-out',
+              'slide-up': 'slideUp 0.8s ease-out',
+              'float': 'float 3s ease-in-out infinite',
+              'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            },
+            keyframes: {
+              fadeIn: {
+                '0%': { opacity: '0' },
+                '100%': { opacity: '1' }
+              },
+              slideUp: {
+                '0%': { opacity: '0', transform: 'translateY(30px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' }
+              },
+              float: {
+                '0%, 100%': { transform: 'translateY(0px)' },
+                '50%': { transform: 'translateY(-10px)' }
+              }
+            }
+          }
+        }
+      }
+    </script>
   </head>
-  
-    <header class="header center">
-      <h3 class="header__logo">
-        <a href="#" class="link">SamedBilginDev</a>
-      </h3>
-      <nav class="nav center">
-        <ul class="nav__list center">
-          <li class="nav__list-item"><a class="link link--nav" href="#projects">Projects</a></li>
-          <li class="nav__list-item"><a class="link link--nav" href="#skills">Skills</a></li>
-          <li class="nav__list-item"><a class="link link--nav" href="#contact">Contact</a></li>
-        </ul>
-        <button type="button" aria-label="toggle theme" class="btn btn--icon theme-toggle">
-          <i aria-hidden="true" id="btn-theme" class="fas fa-moon"></i>
-        </button>
-        <button type="button" aria-label="toggle navigation" class="btn btn--icon nav__hamburger">
-          <i aria-hidden="true" class="fas fa-bars"></i>
-        </button>
-      </nav>
-    </header>
-    <main>
-      <section class="section about-hero center">
-        <div class="about-hero__content">
-          <p class="about-hero__intro">Hi, I am</p>
-          <h1 class="about-hero__name"><span class="about__name">Samed Bilgin.</span></h1>
-          <h2 class="about-hero__role">A Full Stack Developer.</h2>
-          <p class="about-hero__desc">
-            I'm a passionate Full Stack Developer experienced in building scalable .NET Core backend services and React-based UIs. I enjoy developing modern, user-friendly, and efficient web applications.
-          </p>
-          <div class="about-hero__contact center">
-            <a href="Samed_Bilgin_CV_Styled_Updated.pdf" class="btn btn--primary">Resume</a>
-            <div class="social-links">
-              <a href="https://github.com/samedbilgin" aria-label="github" class="link link--icon"><i aria-hidden="true" class="fab fa-github"></i></a>
-              <a href="https://www.linkedin.com/in/samed-bilgin-98576b219/" aria-label="linkedin" class="link link--icon"><i aria-hidden="true" class="fab fa-linkedin"></i></a>
+  <body>
+    <div class="relative flex size-full min-h-screen flex-col bg-gradient-to-br from-gray-50 to-blue-50 group/design-root overflow-x-hidden" style='font-family: "Inter", "Space Grotesk", sans-serif;'>
+      <div class="layout-container flex h-full grow flex-col">
+        <header class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap backdrop-blur-md bg-white/80 border-b border-gray-200/50 px-6 lg:px-10 py-4 transition-all duration-300 hover:bg-white/90">
+          <div class="flex items-center gap-3 text-gray-900">
+            <div class="size-8 p-1 bg-gradient-to-br from-primary-500 to-accent-500 rounded-lg">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+                <g clip-path="url(#clip0_6_330)">
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z"
+                    fill="white"
+                  ></path>
+                </g>
+                <defs>
+                  <clipPath id="clip0_6_330"><rect width="48" height="48" fill="white"></rect></clipPath>
+                </defs>
+              </svg>
+            </div>
+            <h2 class="text-gray-900 text-xl font-bold leading-tight tracking-[-0.02em]">Samed Portfolio</h2>
+          </div>
+          
+          <button class="md:hidden p-2 text-gray-600 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-lg"  
+                  onclick="toggleMobileMenu()" aria-label="Toggle menu">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+          
+          <div class="hidden md:flex flex-1 justify-end gap-8">
+            <nav class="flex items-center gap-8" role="navigation">
+              <a class="text-gray-700 hover:text-primary-600 text-sm font-medium leading-normal transition-colors duration-200 relative group" href="#about">
+                About
+                <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-500 transition-all duration-300 group-hover:w-full"></span>
+              </a>
+              <a class="text-gray-700 hover:text-primary-600 text-sm font-medium leading-normal transition-colors duration-200 relative group" href="#skills">
+                Skills
+                <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-500 transition-all duration-300 group-hover:w-full"></span>
+              </a>
+              <a class="text-gray-700 hover:text-primary-600 text-sm font-medium leading-normal transition-colors duration-200 relative group" href="#experience">
+                Experience
+                <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-500 transition-all duration-300 group-hover:w-full"></span>
+              </a>
+              <a class="text-gray-700 hover:text-primary-600 text-sm font-medium leading-normal transition-colors duration-200 relative group" href="#contact">
+                Contact
+                <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-500 transition-all duration-300 group-hover:w-full"></span>
+              </a>
+            </nav>
+            <div class="flex gap-3">
+              <a href="https://github.com/samedbilgin/" target="_blank" rel="noopener noreferrer"
+                class="flex items-center justify-center w-10 h-10 rounded-lg bg-gray-100 hover:bg-primary-100 text-gray-700 hover:text-primary-600 transition-all duration-200 transform hover:scale-105"
+                aria-label="GitHub Profile">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256">
+                  <path d="M208.31,75.68A59.78,59.78,0,0,0,202.93,28,8,8,0,0,0,196,24a59.75,59.75,0,0,0-48,24H124A59.75,59.75,0,0,0,76,24a8,8,0,0,0-6.93,4,59.78,59.78,0,0,0-5.38,47.68A58.14,58.14,0,0,0,56,104v8a56.06,56.06,0,0,0,48.44,55.47A39.8,39.8,0,0,0,96,192v8H72a24,24,0,0,1-24-24A40,40,0,0,0,8,136a8,8,0,0,0,0,16,24,24,0,0,1,24,24,40,40,0,0,0,40,40H96v16a8,8,0,0,0,16,0V192a24,24,0,0,1,48,0v40a8,8,0,0,0,16,0V192a39.8,39.8,0,0,0-8.44-24.53A56.06,56.06,0,0,0,216,112v-8A58.14,58.14,0,0,0,208.31,75.68ZM200,112a40,40,0,0,1-40,40H112a40,40,0,0,1-40-40v-8a41.74,41.74,0,0,1,6.9-22.48A8,8,0,0,0,80,73.83a43.81,43.81,0,0,1,.79-33.58,43.88,43.88,0,0,1,32.32,20.06A8,8,0,0,0,119.82,64h32.35a8,8,0,0,0,6.74-3.69,43.87,43.87,0,0,1,32.32-20.06A43.81,43.81,0,0,1,192,73.83a8.09,8.09,0,0,0,1,7.65A41.72,41.72,0,0,1,200,104Z"></path>
+                </svg>
+              </a>
+              <a href="https://www.linkedin.com/in/samed-bilgin-98576b219/" target="_blank" rel="noopener noreferrer"
+                class="flex items-center justify-center w-10 h-10 rounded-lg bg-gray-100 hover:bg-primary-100 text-gray-700 hover:text-primary-600 transition-all duration-200 transform hover:scale-105"
+                aria-label="LinkedIn Profile">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256">
+                  <path d="M216,24H40A16,16,0,0,0,24,40V216a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V40A16,16,0,0,0,216,24Zm0,192H40V40H216V216ZM96,112v64a8,8,0,0,1-16,0V112a8,8,0,0,1,16,0Zm88,28v36a8,8,0,0,1-16,0V140a20,20,0,0,0-40,0v36a8,8,0,0,1-16,0V112a8,8,0,0,1,15.79-1.78A36,36,0,0,1,184,140ZM100,84A12,12,0,1,1,88,72,12,12,0,0,1,100,84Z"></path>
+                </svg>
+              </a>
             </div>
           </div>
-        </div>
-      </section>
-      <section id="projects" class="section projects">
-        <h2 class="section__title">Projects</h2>
-        <div class="projects__grid">
-          <div class="project-card">
-            <h3>Duyubox ERP System</h3>
-            <p class="project-card__description">
-              A modular ERP system for fabric production, built with .NET Core and React. Features stock management, AG Grid integration, JWT authentication, CI/CD deployment and cutting/confection modules.
-            </p>
-            <ul class="project-card__stack">
-              <li class="project-card__stack-item">React</li>
-              <li class="project-card__stack-item">TypeScript</li>
-              <li class="project-card__stack-item">.NET Core</li>
-              <li class="project-card__stack-item">AG Grid</li>
-            </ul>
+          
+          <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 right-0 bg-white border-b border-gray-200 shadow-lg">
+            <nav class="flex flex-col p-4 space-y-3">
+              <a href="#about" class="text-gray-700 hover:text-primary-600 py-2 transition-colors duration-200">About</a>
+              <a href="#skills" class="text-gray-700 hover:text-primary-600 py-2 transition-colors duration-200">Skills</a>
+              <a href="#experience" class="text-gray-700 hover:text-primary-600 py-2 transition-colors duration-200">Experience</a>
+              <a href="#contact" class="text-gray-700 hover:text-primary-600 py-2 transition-colors duration-200">Contact</a>
+              <div class="flex gap-3 pt-3 border-t border-gray-200">
+                <a href="https://github.com/samedbilgin" class="flex items-center justify-center w-10 h-10 rounded-lg bg-gray-100 text-gray-700">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256">
+                    <path d="M208.31,75.68A59.78,59.78,0,0,0,202.93,28,8,8,0,0,0,196,24a59.75,59.75,0,0,0-48,24H124A59.75,59.75,0,0,0,76,24a8,8,0,0,0-6.93,4,59.78,59.78,0,0,0-5.38,47.68A58.14,58.14,0,0,0,56,104v8a56.06,56.06,0,0,0,48.44,55.47A39.8,39.8,0,0,0,96,192v8H72a24,24,0,0,1-24-24A40,40,0,0,0,8,136a8,8,0,0,0,0,16,24,24,0,0,1,24,24,40,40,0,0,0,40,40H96v16a8,8,0,0,0,16,0V192a24,24,0,0,1,48,0v40a8,8,0,0,0,16,0V192a39.8,39.8,0,0,0-8.44-24.53A56.06,56.06,0,0,0,216,112v-8A58.14,58.14,0,0,0,208.31,75.68ZM200,112a40,40,0,0,1-40,40H112a40,40,0,0,1-40-40v-8a41.74,41.74,0,0,1,6.9-22.48A8,8,0,0,0,80,73.83a43.81,43.81,0,0,1,.79-33.58,43.88,43.88,0,0,1,32.32,20.06A8,8,0,0,0,119.82,64h32.35a8,8,0,0,0,6.74-3.69,43.87,43.87,0,0,1,32.32-20.06A43.81,43.81,0,0,1,192,73.83a8.09,8.09,0,0,0,1,7.65A41.72,41.72,0,0,1,200,104Z"></path>
+                  </svg>
+                </a>
+                <a href="https://www.linkedin.com/in/samed-bilgin-98576b219/" class="flex items-center justify-center w-10 h-10 rounded-lg bg-gray-100 text-gray-700">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256">
+                    <path d="M216,24H40A16,16,0,0,0,24,40V216a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V40A16,16,0,0,0,216,24Zm0,192H40V40H216V216ZM96,112v64a8,8,0,0,1-16,0V112a8,8,0,0,1,16,0Zm88,28v36a8,8,0,0,1-16,0V140a20,20,0,0,0-40,0v36a8,8,0,0,1-16,0V112a8,8,0,0,1,15.79-1.78A36,36,0,0,1,184,140ZM100,84A12,12,0,1,1,88,72,12,12,0,0,1,100,84Z"></path>
+                  </svg>
+                </a>
+              </div>
+            </nav>
           </div>
-          <div class="project-card">
-            <h3>Fabric Quality Control App</h3>
-            <p class="project-card__description">
-              A .NET WinForms desktop application for quality inspection data entry and reporting. Optimized to assist textile operators with quick and efficient defect tracking.
-            </p>
-            <ul class="project-card__stack">
-              <li class="project-card__stack-item">.NET</li>
-              <li class="project-card__stack-item">WinForms</li>
-              <li class="project-card__stack-item">SQL Server</li>
-            </ul>
+        </header>        <main class="flex-1">
+          <section class="py-12 lg:py-20 px-4 lg:px-40">
+            <div class="max-w-6xl mx-auto">
+              <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+                <div class="flex flex-col items-center lg:items-start text-center lg:text-left flex-1">
+                  <div class="relative mb-8">
+                    <div class="absolute -top-4 -left-4 w-20 h-20 bg-primary-200/30 rounded-full animate-float"></div>
+                    <div class="absolute -bottom-6 -right-6 w-16 h-16 bg-accent-200/30 rounded-lg transform rotate-45 animate-float" style="animation-delay: 1s;"></div>
+                    
+                    <div class="relative">
+                      <div
+                        class="bg-center bg-no-repeat aspect-square bg-cover rounded-full w-40 h-40 lg:w-48 lg:h-48 border-4 border-white shadow-2xl ring-4 ring-primary-100 transition-transform duration-300 hover:scale-105"
+                        style='background-image: url("https://media.licdn.com/dms/image/v2/D4D03AQF8uvJ6SwjuvA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1712245626280?e=1755734400&v=beta&t=0ulBW2cglFBFOoS-Q11GGzi_D4pOzPPMU8_Y8dVDz0I");'
+                      ></div>
+                      <div class="absolute bottom-2 right-2 w-6 h-6 bg-green-500 rounded-full border-3 border-white animate-pulse-slow flex items-center justify-center">
+                        <div class="w-2 h-2 bg-white rounded-full"></div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="space-y-4 animate-fade-in">
+                    <div>
+                      <h1 class="text-4xl lg:text-6xl font-bold text-gray-900 leading-tight tracking-[-0.02em] mb-2">
+                        Samed Bilgin
+                      </h1>
+                      <div class="flex items-center justify-center lg:justify-start gap-2 mb-3">
+                        <div class="w-2 h-2 bg-primary-500 rounded-full animate-pulse"></div>
+                        <h2 class="text-xl lg:text-2xl font-semibold bg-gradient-to-r from-primary-600 to-accent-600 bg-clip-text text-transparent">
+                          Full Stack Web Developer
+                        </h2>
+                      </div>
+                      <p class="text-gray-600 text-lg leading-relaxed max-w-lg">
+                        Passionate about creating innovative web solutions that make a difference. Turning ideas into reality with clean code and modern technologies.
+                      </p>
+                    </div>
+                    
+                    <div class="flex flex-wrap justify-center lg:justify-start gap-6 py-6">
+                      <div class="text-center">
+                        <div class="text-2xl font-bold text-primary-600">2+</div>
+                        <div class="text-sm text-gray-500">Years Experience</div>
+                      </div>
+                      <div class="text-center">
+                        <div class="text-2xl font-bold text-accent-600">10+</div>
+                        <div class="text-sm text-gray-500">Projects Completed</div>
+                      </div>
+                      <div class="text-center">
+                        <div class="text-2xl font-bold text-green-600">98%</div>
+                        <div class="text-sm text-gray-500">Client Satisfaction</div>
+                      </div>
+                    </div>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                      <button
+                        onclick="scrollToSection('experience')"
+                        class="group flex items-center justify-center gap-2 bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 text-white font-semibold py-3 px-6 rounded-full transition-all duration-300 transform hover:scale-105 hover:shadow-lg focus:outline-none focus:ring-4 focus:ring-primary-300"
+                      >
+                        <span>View My Work</span>
+                        <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="currentColor" viewBox="0 0 20 20">
+                          <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                        </svg>
+                      </button>
+                      <a href="Samed_Bilgin_CV_Styled_Updated.pdf" download="Samed_Bilgin_CV.pdf"
+                        class="flex items-center justify-center gap-2 border-2 border-gray-300 hover:border-accent-500 text-gray-700 hover:text-accent-600 font-semibold py-3 px-6 rounded-full transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-gray-200"
+                      >
+                        <span>Download CV</span>
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                          <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L10 12.586l2.293-2.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="flex-1 max-w-md lg:max-w-lg">
+                  <div class="bg-gray-900 rounded-2xl p-6 shadow-2xl transform hover:scale-105 transition-transform duration-300">
+                    <div class="flex items-center gap-2 mb-4">
+                      <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+                      <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                      <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+                      <div class="ml-auto text-gray-400 text-xs">portfolio.js</div>
+                    </div>
+                    <div class="font-mono text-sm text-gray-300 space-y-2">
+                      <div><span class="text-blue-400">const</span> <span class="text-green-400">developer</span> = {</div>
+                      <div class="pl-4"><span class="text-red-400">name</span>: <span class="text-yellow-400">'Samed Bilgin'</span>,</div>
+                      <div class="pl-4"><span class="text-red-400">role</span>: <span class="text-yellow-400">'Full Stack Developer'</span>,</div>
+                      <div class="pl-4"><span class="text-red-400">skills</span>: [</div>
+                      <div class="pl-8"><span class="text-yellow-400">'React'</span>, <span class="text-yellow-400">'Node.js'</span>,</div>
+                      <div class="pl-8"><span class="text-yellow-400">'.Net'</span>, <span class="text-yellow-400">'AWS'</span></div>
+                      <div class="pl-4">],</div>
+                      <div class="pl-4"><span class="text-red-400">passion</span>: <span class="text-yellow-400">'Building amazing web apps'</span></div>
+                      <div>};</div>
+                      <div class="mt-4"><span class="text-purple-400">console</span>.<span class="text-blue-400">log</span>(<span class="text-yellow-400">'Let\'s build something great!'</span>);</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>        <section id="about" class="py-16 lg:py-24 px-4 lg:px-40 bg-white">
+            <div class="max-w-6xl mx-auto">
+              <div class="text-center mb-16">
+                <div class="inline-flex items-center px-4 py-2 bg-primary-50 text-primary-600 rounded-full text-sm font-semibold mb-4">
+                  👨‍💻 About Me
+                </div>
+                <h2 class="text-3xl lg:text-5xl font-bold text-gray-900 leading-tight tracking-[-0.02em] mb-6">
+                  Crafting Digital 
+                  <span class="bg-gradient-to-r from-primary-500 to-accent-500 bg-clip-text text-transparent">
+                    Experiences
+                  </span>
+                </h2>
+              </div>
+              
+              <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                  <p class="text-gray-600 text-lg leading-relaxed">
+                    I am a full-stack web developer with over <strong class="text-primary-600">2 years of experience</strong>  in building robust and scalable web applications. My journey started with a passion for problem-solving and has evolved into a love for creating digital solutions that make a real impact.
+                  </p>
+                  
+                  <p class="text-gray-600 text-lg leading-relaxed">
+                    My expertise spans across modern front-end technologies like <strong class="text-accent-600">React, Angular, and Vue.js</strong>, complemented by solid back-end skills in <strong class="text-green-600">Node.js, Python, and Java</strong>. I'm proficient in both SQL and NoSQL databases and have extensive experience with cloud platforms like AWS and Azure.
+                  </p>
+                  
+                  <p class="text-gray-600 text-lg leading-relaxed">
+                    I am dedicated to delivering high-quality code, exceptional user experiences, and solutions that not only meet requirements but exceed expectations. Every project is an opportunity to learn, grow, and push the boundaries of what's possible on the web.
+                  </p>
+                  
+                  <div class="grid grid-cols-2 gap-4 pt-6">
+                    <div class="flex items-center gap-3">
+                      <div class="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center">
+                        <svg class="w-4 h-4 text-primary-600" fill="currentColor" viewBox="0 0 20 20">
+                          <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                      </div>
+                      <span class="text-gray-700 font-medium">Clean Code Advocate</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                      <div class="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center">
+                        <svg class="w-4 h-4 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                          <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                      </div>
+                      <span class="text-gray-700 font-medium">Agile Methodology</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                      <div class="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center">
+                        <svg class="w-4 h-4 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
+                          <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                      </div>
+                      <span class="text-gray-700 font-medium">UX/UI Focused</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                      <div class="w-8 h-8 bg-orange-100 rounded-lg flex items-center justify-center">
+                        <svg class="w-4 h-4 text-orange-600" fill="currentColor" viewBox="0 0 20 20">
+                          <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                      </div>
+                      <span class="text-gray-700 font-medium">Continuous Learner</span>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="relative">
+                  <div class="bg-gradient-to-br from-gray-50 to-blue-50 rounded-2xl p-8">
+                    <h3 class="text-xl font-bold text-gray-900 mb-6">Development Philosophy</h3>
+                    <div class="space-y-4">
+                      <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center text-white font-bold text-lg">
+                          01
+                        </div>
+                        <div>
+                          <h4 class="font-semibold text-gray-900">User-Centric Design</h4>
+                          <p class="text-gray-600 text-sm">Every decision starts with the user experience</p>
+                        </div>
+                      </div>
+                      <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center text-white font-bold text-lg">
+                          02
+                        </div>
+                        <div>
+                          <h4 class="font-semibold text-gray-900">Scalable Solutions</h4>
+                          <p class="text-gray-600 text-sm">Building for today and tomorrow</p>
+                        </div>
+                      </div>
+                      <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-purple-500 rounded-lg flex items-center justify-center text-white font-bold text-lg">
+                          03
+                        </div>
+                        <div>
+                          <h4 class="font-semibold text-gray-900">Performance First</h4>
+                          <p class="text-gray-600 text-sm">Optimized for speed and efficiency</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          
+          <section id="skills" class="py-16 lg:py-24 px-4 lg:px-40 bg-gradient-to-br from-gray-50 to-blue-50">
+            <div class="max-w-6xl mx-auto">
+              <div class="text-center mb-16">
+                <div class="inline-flex items-center px-4 py-2 bg-accent-50 text-accent-600 rounded-full text-sm font-semibold mb-4">
+                  🛠️ Technical Skills
+                </div>
+                <h2 class="text-3xl lg:text-5xl font-bold text-gray-900 leading-tight tracking-[-0.02em] mb-6">
+                  My Tech 
+                  <span class="bg-gradient-to-r from-accent-500 to-primary-500 bg-clip-text text-transparent">
+                    Arsenal
+                  </span>
+                </h2>
+                <p class="text-gray-600 text-lg lg:text-xl leading-relaxed max-w-3xl mx-auto">
+                  A diverse set of modern technologies and frameworks that I use to bring ideas to life.
+                </p>
+              </div>
+              
+              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                  <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center mb-4">
+                    <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                    </svg>
+                  </div>
+                  <h3 class="text-lg font-bold text-gray-900 mb-3">Frontend</h3>
+                  <div class="flex flex-wrap gap-2">
+                    <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">React</span>
+                    <span class="px-3 py-1 bg-red-100 text-red-700 rounded-full text-sm font-medium">Angular</span>
+                    <span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm font-medium">Vue.js</span>
+                  </div>
+                </div>
+                
+                <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                  <div class="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-lg flex items-center justify-center mb-4">
+                    <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M2 5a2 2 0 012-2h8a2 2 0 012 2v10a2 2 0 002 2H4a2 2 0 01-2-2V5zm3 1h6v4H5V6zm6 6H5v2h6v-2z" clip-rule="evenodd"/>
+                      <path d="M15 7h1a2 2 0 012 2v5.5a1.5 1.5 0 01-3 0V9a1 1 0 00-1-1h-1v3a2 2 0 11-4 0V7.5A1.5 1.5 0 0110.5 6H15v1z"/>
+                    </svg>
+                  </div>
+                  <h3 class="text-lg font-bold text-gray-900 mb-3">Backend</h3>
+                  <div class="flex flex-wrap gap-2">
+                    <span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm font-medium">Node.js</span>
+                    <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">Python</span>
+                    <span class="px-3 py-1 bg-orange-100 text-orange-700 rounded-full text-sm font-medium">Java</span>
+                  </div>
+                </div>
+                
+                <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                  <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-lg flex items-center justify-center mb-4">
+                    <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"/>
+                    </svg>
+                  </div>
+                  <h3 class="text-lg font-bold text-gray-900 mb-3">Database</h3>
+                  <div class="flex flex-wrap gap-2">
+                    <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">SQL</span>
+                    <span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm font-medium">NoSQL</span>
+                    <span class="px-3 py-1 bg-red-100 text-red-700 rounded-full text-sm font-medium">MongoDB</span>
+                  </div>
+                </div>
+                
+                <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                  <div class="w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg flex items-center justify-center mb-4">
+                    <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M5.5 16a3.5 3.5 0 01-.369-6.98 4 4 0 117.753-1.977A4.5 4.5 0 1113.5 16h-8z"/>
+                    </svg>
+                  </div>
+                  <h3 class="text-lg font-bold text-gray-900 mb-3">Cloud & DevOps</h3>
+                  <div class="flex flex-wrap gap-2">
+                    <span class="px-3 py-1 bg-yellow-100 text-yellow-700 rounded-full text-sm font-medium">AWS</span>
+                    <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">Azure</span>
+                    <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm font-medium">Docker</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>        
+          <section id="experience" class="py-16 lg:py-24 px-4 lg:px-40 bg-white">
+            <div class="max-w-6xl mx-auto">
+              <div class="text-center mb-16">
+                <div class="inline-flex items-center px-4 py-2 bg-primary-50 text-primary-600 rounded-full text-sm font-semibold mb-4">
+                  💼 My Experience
+                </div>
+                <h2 class="text-3xl lg:text-5xl font-bold text-gray-900 leading-tight tracking-[-0.02em] mb-6">
+                  Where I've <span class="bg-gradient-to-r from-primary-500 to-accent-500 bg-clip-text text-transparent">Worked</span>
+                </h2>
+              </div>
+              
+              <div class="space-y-12">
+                <div class="flex flex-col lg:flex-row items-start gap-8 bg-gray-50 p-8 rounded-2xl shadow-xl transition-all duration-300 hover:shadow-2xl">
+                  <div class="flex-shrink-0 w-20 h-20 bg-gradient-to-br from-primary-500 to-primary-600 rounded-full flex items-center justify-center text-white text-3xl font-bold">
+                    A
+                  </div>
+                  <div class="flex-1">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-2">Full Stack Developer <span class="text-primary-600">@ Alternet Yazılım</span></h3>
+                    <p class="text-gray-500 text-sm mb-4">Jul 2024 - Present</p> 
+                    <ul class="list-disc list-inside text-gray-700 space-y-2">
+                      <li>Developed and maintained backend services using ASP.NET Core and C#.</li> 
+                      <li>Designed and implemented RESTful APIs for product management, shopping cart, and user authentication modules.</li> 
+                      <li>Participated in the development of a full-featured e-commerce web application from scratch.</li> 
+                      <li>Worked closely with frontend developers to ensure smooth API integrations using JSON and HTTP protocols.</li> 
+                      <li>Utilized Entity Framework for database operations and wrote LINQ queries for efficient data handling.</li> 
+                      <li>Took part in sprint planning and daily stand-up meetings within an Agile development team.</li> 
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="flex flex-col lg:flex-row items-start gap-8 bg-gray-50 p-8 rounded-2xl shadow-xl transition-all duration-300 hover:shadow-2xl">
+                  <div class="flex-shrink-0 w-20 h-20 bg-gradient-to-br from-accent-500 to-accent-600 rounded-full flex items-center justify-center text-white text-3xl font-bold">
+                    P
+                  </div>
+                  <div class="flex-1">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-2">Backend Developer Intern <span class="text-accent-600">@ Polo Plus</span></h3>
+                    <p class="text-gray-500 text-sm mb-4">Mar 2024 - May 2025</p> 
+                    <ul class="list-disc list-inside text-gray-700 space-y-2">
+                      <li>Performed fabric quality inspections and supported documentation of defects according to production standards.</li> 
+                      <li>Assisted in preparing daily and weekly quality control reports for supervisors and quality engineers.</li> 
+                      <li>Gained practical experience in quality assurance procedures and inventory tracking.</li> 
+                      <li>Additionally contributed to the development of a simple .NET-based internal application to streamline report entry processes.</li> 
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section id="contact" class="py-16 lg:py-24 px-4 lg:px-40 bg-gradient-to-br from-gray-50 to-blue-50">
+            <div class="max-w-4xl mx-auto text-center">
+              <div class="inline-flex items-center px-4 py-2 bg-green-50 text-green-600 rounded-full text-sm font-semibold mb-4">
+                📧 Get In Touch
+              </div>
+              <h2 class="text-3xl lg:text-5xl font-bold text-gray-900 leading-tight tracking-[-0.02em] mb-6">
+                Let's Build Something <span class="bg-gradient-to-r from-green-500 to-blue-500 bg-clip-text text-transparent">Amazing</span> Together!
+              </h2>
+              <p class="text-gray-600 text-lg lg:text-xl leading-relaxed mb-10">
+                Have a project in mind or just want to chat? Feel free to reach out. I'm always open to new opportunities and collaborations.
+              </p>
+              <a href="mailto:samedbilgin32@gmail.com" class="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-green-500 to-blue-500 hover:from-green-600 hover:to-blue-600 text-white font-semibold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105 hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-green-300">
+                Say Hello!
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                  <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+                </svg>
+              </a>
+            </div>
+          </section>
+        </main>
+
+        <footer class="bg-gray-800 text-white py-8 px-4 lg:px-40">
+          <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+            <div class="mb-4 md:mb-0">
+              <h3 class="text-xl font-bold">Samed Bilgin</h3>
+              <p class="text-gray-400">Full Stack Web Developer</p>
+            </div>
+            <div class="flex flex-col md:flex-row items-center gap-4">
+              <nav class="flex gap-4 mb-4 md:mb-0">
+                <a href="#about" class="text-gray-300 hover:text-white transition-colors duration-200">About</a>
+                <a href="#skills" class="text-gray-300 hover:text-white transition-colors duration-200">Skills</a>
+                <a href="#experience" class="text-gray-300 hover:text-white transition-colors duration-200">Experience</a>
+                <a href="#contact" class="text-gray-300 hover:text-white transition-colors duration-200">Contact</a>
+              </nav>
+              <div class="flex gap-3">
+                <a href="https://github.com/samedbilgin/" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile" class="text-gray-300 hover:text-white transition-colors duration-200">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><path d="M208.31,75.68A59.78,59.78,0,0,0,202.93,28,8,8,0,0,0,196,24a59.75,59.75,0,0,0-48,24H124A59.75,59.75,0,0,0,76,24a8,8,0,0,0-6.93,4,59.78,59.78,0,0,0-5.38,47.68A58.14,58.14,0,0,0,56,104v8a56.06,56.06,0,0,0,48.44,55.47A39.8,39.8,0,0,0,96,192v8H72a24,24,0,0,1-24-24A40,40,0,0,0,8,136a8,8,0,0,0,0,16,24,24,0,0,1,24,24,40,40,0,0,0,40,40H96v16a8,8,0,0,0,16,0V192a24,24,0,0,1,48,0v40a8,8,0,0,0,16,0V192a39.8,39.8,0,0,0-8.44-24.53A56.06,56.06,0,0,0,216,112v-8A58.14,58.14,0,0,0,208.31,75.68ZM200,112a40,40,0,0,1-40,40H112a40,40,0,0,1-40-40v-8a41.74,41.74,0,0,1,6.9-22.48A8,8,0,0,0,80,73.83a43.81,43.81,0,0,1,.79-33.58,43.88,43.88,0,0,1,32.32,20.06A8,8,0,0,0,119.82,64h32.35a8,8,0,0,0,6.74-3.69,43.87,43.87,0,0,1,32.32-20.06A43.81,43.81,0,0,1,192,73.83a8.09,8.09,0,0,0,1,7.65A41.72,41.72,0,0,1,200,104Z"></path></svg>
+                </a>
+                <a href="https://www.linkedin.com/in/samed-bilgin-98576b219/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile" class="text-gray-300 hover:text-white transition-colors duration-200">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><path d="M216,24H40A16,16,0,0,0,24,40V216a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V40A16,16,0,0,0,216,24Zm0,192H40V40H216V216ZM96,112v64a8,8,0,0,1-16,0V112a8,8,0,0,1,16,0Zm88,28v36a8,8,0,0,1-16,0V140a20,20,0,0,0-40,0v36a8,8,0,0,1-16,0V112a8,8,0,0,1,15.79-1.78A36,36,0,0,1,184,140ZM100,84A12,12,0,1,1,88,72,12,12,0,0,1,100,84Z"></path></svg>
+                </a>
+              </div>
+            </div>
           </div>
-        </div>
-      </section>
-      <section class="section skills" id="skills">
-        <h2 class="section__title">Skills</h2>
-        <ul class="skills__list">
-          <li class="skills__list-item tag">.NET Core</li>
-          <li class="skills__list-item tag">C#</li>
-          <li class="skills__list-item tag">React.js</li>
-          <li class="skills__list-item tag">TypeScript</li>
-          <li class="skills__list-item tag">SQL Server</li>
-          <li class="skills__list-item tag">PostgreSQL</li>
-          <li class="skills__list-item tag">Entity Framework</li>
-          <li class="skills__list-item tag">LINQ</li>
-          <li class="skills__list-item tag">Tailwind CSS</li>
-          <li class="skills__list-item tag">Git</li>
-          <li class="skills__list-item tag">CI/CD</li>
-          <li class="skills__list-item tag">Agile / Scrum</li>
-        </ul>
-      </section>
-      <section class="section contact center" id="contact">
-        <h2 class="section__title">Contact</h2>
-        <p class="contact__text">
-          Have a project in mind or just want to chat? Feel free to reach out!
-        </p>
-        <a href="mailto:samedbilgin32@gmail.com" class="btn btn--primary btn--large">Email Me</a>
-      </section>
-    </main>
-    <footer class="footer">
-      <a href="https://github.com/samedbilgin" class="link footer__link">Created by Samed Bilgin</a>
-    </footer>
-    <div class="scroll-container">
-      <div class="scroll-top">
-        <a aria-label="Scroll up" href="#top">
-          <i aria-hidden="true" class="fas fa-arrow-up"></i>
-        </a>
+          <div class="text-center text-gray-400 text-sm mt-8">
+            © 2025 Samed Bilgin. All rights reserved.
+          </div>
+        </footer>
       </div>
     </div>
-    <script src="script.js"></script>
+
+    <script>
+      function toggleMobileMenu() {
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenu.classList.toggle('hidden');
+      }
+
+      function scrollToSection(id) {
+        document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+      }
+    </script>
   </body>
 </html>
