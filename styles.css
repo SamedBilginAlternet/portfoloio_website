@@ -18,13 +18,18 @@
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
-  color: var(--clr-font);
-  background-color: var(--clr-bg);
-  line-height: 1.6;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
+
+header.header {
+  margin-top: 0;
+  top: 0;
+  position: sticky;
+  z-index: 999;
+}
+
 
 .center {
   display: flex;
